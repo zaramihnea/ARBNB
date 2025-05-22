@@ -1,5 +1,7 @@
 # ARBNB
-HCI project 2025
+* You are a vivid person who loves traveling. You do your own research very carefully. You use a mobile app to view stats and data about each commodity for AirBnB or Booking. Moreover, you use MR Headset to explore the premises remotely and view useful details on-site (where the key is, how to use a home appliance and other AR interactions).
+* Mobile Phone App
+* MR Headset App
 
 ## Sketches:
 ![vr_1](images/vr_1.jpg)
@@ -7,8 +9,8 @@ HCI project 2025
 ![mobile_2](images/mobile_2.jpg)
 
 ## Storyboards:
-![vr](images/vr_storyboard.png)
 ![mobile](images/mobile_storyboard.jpg)
+![vr](images/vr_storyboard.jpg)
 
 ## Diagrams:
 ![userflow](images/userflow.png)
