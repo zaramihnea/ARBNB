@@ -104,6 +104,7 @@
     <a href="#manual">User Manual</a>
     <a href="#prototype_details">Prototype Details</a>
     <a href="#screen_overview">Screen Overview</a>
+    <a href="#ai_usage">Use of AI in the Project</a>
   </nav>
 
   <section id="intro">
@@ -433,17 +434,17 @@
         The Profile Screen is designed with clarity and accessibility in mind, ensuring that all account-related features and legal resources are easy to locate and navigate.
     </p>
 
-    <h3>6.6 Virtual Reality (VR) Experience Screen</h3>
+    <h3>6.6 Augmented Reality (AR) Experience Screen</h3>
     <p>
-        The VR Experience Screen provides an immersive, interactive 2D environment that allows users to explore a selected property in virtual reality. This feature simulates a real-world tour, enhancing user confidence and engagement when evaluating a potential accommodation.
+        The AR Experience Screen provides an immersive, interactive 2D environment that allows users to explore a selected property in virtual reality. This feature simulates a real-world tour, enhancing user confidence and engagement when evaluating a potential accommodation.
     </p>
 
     <p>
-        A key element of the VR interface is the <strong>True-Scale Luggage Organizer</strong>, a virtual object that users can position within the space to compare dimensions and better understand room sizes. This functionality supports practical decision-making regarding space adequacy for travel needs.
+        A key element of the AR interface is the <strong>True-Scale Luggage Organizer</strong>, a virtual object that users can position within the space to compare dimensions and better understand room sizes. This functionality supports practical decision-making regarding space adequacy for travel needs.
     </p>
 
     <p>
-        Throughout the VR environment, users can interact with a series of smart icons that reveal contextual information or enable virtual controls. These include:
+        Throughout the AR environment, users can interact with a series of smart icons that reveal contextual information or enable virtual controls. These include:
     </p>
 
     <ul>
@@ -486,6 +487,85 @@
 
 </section>
 
+<section id="ai_usage">
+  <h2>Use of AI in the Project</h2>
+  <p>
+    During the development of the ARBNB prototype and its documentation, ChatGPT, V0 were utilized to assist in refining content, clarifying concepts, and generating user manual text. 
+    The AI helped to enhance clarity, improve wording, and provide suggestions for interactive design patterns and user experience improvements.
+  </p>
+  <h3>Prompts Used For This Documentation  Using ChatGpt</h3>
+  <ul>
+    <li>"Can you create me a Scholarly HTML documentation regarding interaction design patterns, design decisions and user manual for an app called ARBNB, similar to AIRBNB?"
+    </li>
+
+    <li>“Can you give me other examples of interactive design patterns that I can include?”</li>
+    <li>“Can you modify the user manual taking into account that users don’t need an account to browse listings but need one to book or host?”</li>
+    <li>“Please add a section about design decisions for a Figma prototype.”</li>
+  </ul>
+
+  <h3>Prompts Used For Creating The Persona Profiles and Storyboards Using ChatGpt</h3>
+  <ul>
+    <li>
+      "Adarina Baicu <br>
+      Date of Birth: 05.09.2001<br>
+      Gender: Female<br>
+      Location: Iasi, Romania<br>
+      Work place: Student<br>
+      School: Undergraduate<br>
+      Technology Level: Upper-Intermediate<br>
+
+      Can you create at least two points at each of the categories (Goals, Frustrations & Pain Points, Scenarios, Other Details) for a persona profile for a mobile and AR app for searching rent (similar to Airbnb), according to the information above about persona?"
+    </li>
+
+    <li>
+      "Can you give 2 other details and 2 goals?"
+    </li>
+
+    <li>
+      "Hi, can you generate a storyboard in pencil style consisting of 4 equal parts for a mobile app similar to Airbnb?"
+    </li>
+  </ul>
+
+  <h3>Prompts Used For Creating The AR Application Using V0</h3>
+  <ul>
+  <li>"Develop an augmented reality (AR) application named <strong>ARBNB</strong>, designed to allow users to interact with and explore virtual environments overlaid onto the real world."</li>
+  <li>"The core functionality should enable users to view and interact with AR models of properties, allowing for a virtual tour experience."</li>
+  <li>"The application must include a customizable AR interface, allowing users to personalize the appearance and functionality of the AR elements. Options for changing the size, color, and position of virtual objects. Ability to add or remove interactive elements within the AR scene."</li>
+  <li>"Build with focus on user experience, ensuring intuitive navigation and seamless integration of AR elements with the real-world environment."</li>
+  <li><strong>"ARBNB</strong> is a platform like Airbnb for renting hotel rooms and similar properties."</li>
+  <li>"Include an image of a room inside with smart home modules placed over certain smart home elements, e.g., a smart lamp."</li>
+  <li>"The wifi strength should be shown as a radiating animation from the wifi router, <em>not</em> a button."</li>
+  <li>"Hidden features should be accessed through something like a vault."</li>
+  <li>"Instructions for using the coffee machine should appear over the coffee machine element."</li>
+  <li>"Remove the bottom bar from the interface."</li>
+  <li>"The circles in the environment should be clickable, showing more details/options. Example: Clicking the smart lamp circle opens an AR card allowing the user to open or close the light."</li>
+  <li>"Ensure that if any text is on a black background, the text color is white."</li>
+  <li>"Buttons inside the popup AR windows should be clickable, with button text color black."</li>
+  <li>"Make slider colors white and grey."</li>
+  <li>"Make the wifi switcher functional."</li>
+  <li>"Allow pinning any AR card to the interface, enabling users to move it around; the corresponding circle disappears when pinned."</li>
+  <li>"Make sliders and buttons for the smart lamp functional."</li>
+  <li>"Allow resizing of any unpinned AR card."</li>
+  <li>"Fix the code error: "The `style` prop expects a mapping from style properties to values, not a string. For example, style={{marginRight: spacing + 'em'}} when using JSX." Revise code accordingly."</li>
+  <li>"Remove the ARBNB menu hamburger icon."</li>
+  <li>"Make the "back" button on the top left corner close the current tab."</li>
+  <li>"Add a button on the bottom right corner for "true-to-scale organiser" that shows a hologram-like suitcase that can be moved around."</li>
+  <li>"Add an exclamation mark in the middle of the hologram suitcase with a pulsing animation similar to the wifi indicator. Pressing the exclamation mark shows a message: "noisy zone detected"."</li>
+  <li>"The suitcase should be an image with a hologram effect (image to be added later in the public folder)."</li>
+  <li>"When moving the suitcase to the top right side, the image and hologram effect become smaller."</li>
+  <li>"On the top left, the suitcase remains the same size as in the middle; on the left and right bottom sides, it becomes bigger."</li>
+  <li>"Use this suitcase image: <a href="https://drive.google.com/file/d/1KnNHIUAfsryJzG-mf57-soPGfvWOMOqK/view?usp=sharing" target="_blank" rel="noopener noreferrer">Drive Link</a>."</li>
+  <li>"Make the suitcase smaller on the top right part."</li>
+  <li>"Remove full borders of the hologram effect—no square border, but a more "hologramy" effect with eased edges (ease-out), not sharp corners."</li>
+  <li>"Fix a bug where opening the climate control also opens the noise control. Clicking climate control again opens the climate control card, but the noise level exclamation icon remains over the climate control card."</li>
+  <li>"Re-add functionality for closing the current tab when pressing the back button on the top left corner."</li>
+  </ul>
+
+  <p>
+    These prompts helped streamline the writing process and ensure the documentation was clear and user-friendly.
+  </p>
+
+</section>
 
 
   <footer>
