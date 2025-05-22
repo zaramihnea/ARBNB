@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ARBNB - Scholarly Documentation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Base Styles */
+    body {
+      font-family: 'Segoe UI', Roboto, Georgia, serif;
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+      background-color: #fdfdfd;
+      color: #2c2c2c;
+      line-height: 1.7;
+    }
+
+    header, footer {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #003366;
+      margin-bottom: 0.2rem;
+    }
+
+    header p {
+      font-style: italic;
+      color: #666;
+    }
+
+    h2 {
+      border-bottom: 2px solid #003366;
+      padding-bottom: 0.4rem;
+      margin-top: 3rem;
+    }
+
+    h3 {
+      color: #003366;
+      margin-top: 2rem;
+    }
+
+    nav {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #003366;
+      margin: 0 1rem;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+    }
+
+    ul, ol {
+      margin-left: 1.5rem;
+    }
+
+    code {
+      background-color: #eaeaea;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+
+    footer {
+      font-size: 0.9rem;
+      color: #888;
+      border-top: 1px solid #ccc;
+      padding-top: 1rem;
+      margin-top: 4rem;
+    }
+
+    blockquote {
+      background: #f1f1f1;
+      border-left: 4px solid #003366;
+      margin: 1.5em 0;
+      padding: 1em;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ARBNB</h1>
+    <p><em>Scholarly Documentation on Interaction Design, Design Rationale, and User Instructions</em></p>
+  </header>
+
+  <nav>
+    <a href="#intro">Introduction</a>
+    <a href="#patterns">Design Patterns</a>
+    <a href="#decisions">Design Rationale</a>
+    <a href="#manual">User Manual</a>
+    <a href="#prototype_details">Prototype Details</a>
+    <a href="#screen_overview">Screen Overview</a>
+  </nav>
+
+  <section id="intro">
+    <h2>1. Introduction</h2>
+    <p>
+    <strong>ARBNB</strong> is a conceptual design for a property rental platform, modeled after the core ideas behind Airbnb. This documentation outlines the interaction patterns, design principles, and user experience decisions as implemented in a high-fidelity Figma prototype. The prototype serves as a foundation for future development and user testing.
+    </p>
+
+  </section>
+
+  <section id="patterns">
+    <h2>2. Interaction Design Patterns</h2>
+
+    <h3>2.1 Search & Filter</h3>
+    <p>
+        Users engage with a dynamic search bar that supports keyword inputs and autocomplete suggestions. This model follows the <strong>Search and Refine</strong> pattern and is rooted in the heuristic of <em>visibility of system status</em>.  This pattern enhances discoverability and ensures users can locate relevant items quickly by narrowing down options.
+    </p>
+
+    <p>
+        <strong>Example:</strong> On the home screen of the mobile app, users begin typing a city name such as “Cluj-Napoca” into the search bar. 
+        Instantly, the interface displays location suggestions beneath the input field, including matching neighborhoods and popular tourist districts. 
+        The property list updates dynamically with each filter adjustment, ensuring that only the most relevant options are shown.
+    </p>
+
+    <h3>2.2 Progressive Disclosure</h3>
+
+    <p>
+        Only the most essential information is shown initially, while additional details are hidden and can be revealed on user action (e.g., click, tap). 
+        This reduces cognitive load and avoids overwhelming users. This supports the principle of <em>cognitive economy</em> and aligns with the <strong>progressive disclosure</strong> pattern.
+    </p>
+
+    <p>
+        <strong>Example:</strong> Property listings show a short description, and clicking expands to reveal the full details, like 
+        host information(name, hosting history) description of the property, number of guests, bedrooms, amenities, house rules,
+        price, address or general area with a map preview.
+    </p>
+
+    <h3>2.3 Infinite Scroll / Load More</h3>
+    <p>
+        As users scroll down a list, additional content is automatically loaded, creating a seamless and uninterrupted browsing experience, improving navigation flow and reducing the need for pagination or extra clicks.
+        Alternatively, a “Load More” button can be used to load the next batch of results.
+    </p>
+
+    <p>
+        <strong>Example:</strong> The Property Listing page showcases all available accommodations based on the user’s input, giving a broad overview of relevant options in a visually engaging, scrollable format.
+        Each property is displayed as a card featuring a thumbnail image, title, rating, and information abot the host. 
+        This layout allows users to quickly scan through listings without needing to open each one individually. 
+        As users scroll down the screen, the interface dynamically loads additional entries using infinite scroll, ensuring a seamless browsing experience without the need for manual pagination. 
+        This approach enhances user engagement by minimizing friction, keeping attention focused on discovering new properties without interruption.
+    </p>
+
+    <h3>2.4 Tabbed Navigation</h3>
+
+    <p>
+        Information is organized into distinct tabs that users can quickly switch between without leaving the current page. This helps in segmenting content logically.
+    </p>
+
+    <p>
+        <strong>Example:</strong> On a property page, tabs like “Reviews”, "Details", “Map”, and “Tour” let users access different content views easily. This tabbed navigation structure helps prevent information overload by organizing content into distinct, easily accessible sections. For instance, users can quickly switch to the “Reviews” tab to read guest feedback without losing their place, or jump to the “Map” tab to view the property's location and nearby attractions. The interface updates smoothly without reloading the page, ensuring a seamless and efficient user experience while maintaining context.
+    </p>
+
+    <h3>2.5 Breadcrumb Navigation</h3>
+
+    <p>
+        Breadcrumbs display the user’s navigation path in a hierarchical format, allowing them to easily backtrack through previous levels or sections of the app. This pattern is particularly effective in mobile interfaces with nested or categorized content, where users may dive deep into a specific item or category. Breadcrumbs enhance usability by reinforcing the user’s current position within the app structure and providing a clear route to return to broader overviews without needing to use the back button multiple times.
+    </p>
+
+    <p>
+       <strong>Example:</strong> A navigation trail such as <em>Home > Cabins > Rustic Cabin in Cluj-Napoca, Romania > Reviews</em> allows the user to tap on “Cabins” to return to the general category or on “Cluj-Napoca” to view all cabins available in that specific region. This supports quick backward navigation and helps users efficiently move through different content layers.
+    </p>
+
+
+
+  </section>
+
+<section id="decisions">
+  <h2>3. Design Decisions</h2>
+
+  <h3>3.1 Visual Minimalism</h3>
+  <p>
+    For this prototype, a modern and minimalistic UI style was chosen to create a clean and intuitive user experience. The design emphasizes clear typography, generous whitespace, and a calm, neutral color palette. These choices aim to prioritize the display of essential content while minimizing visual clutter, which helps reduce user cognitive load and decision fatigue. Since this is a Figma prototype, the focus was on establishing a clear visual hierarchy and an aesthetic foundation that can be iterated on during development.
+  </p>
+
+  <h3>3.2 Role-based Navigation</h3>
+  <p>
+    The navigation structure in the prototype adapts dynamically based on the user’s role — whether they are a host or a guest. Hosts have access to features like property listing management and analytics dashboards, while guests see personalized recommendations and trip planning tools. Although this behavior is conceptual within the prototype, it reflects an important design decision aimed at tailoring the experience to different user needs and simplifying interface complexity by showing only relevant features.
+  </p>
+
+  <h3>3.3 Trust Signals</h3>
+  <p>
+    Building user trust is vital for a platform facilitating bookings and payments. The prototype integrates visual trust elements such as user reviews. These signals are prominently displayed to increase user confidence and reduce hesitation during the booking process. While the prototype does not implement backend verification, these design elements serve as a blueprint for how trust and security can be visually communicated.
+  </p>
+
+  <h3>3.4 Performance Considerations</h3>
+  <p>
+    Although performance cannot be fully tested in a static Figma prototype, design decisions anticipate smooth and responsive user interactions. The prototype incorporates concepts like lazy loading placeholders for images, modular component layouts, and streamlined data presentation. These concepts guide future development toward efficient rendering and data fetching strategies, ensuring the final app remains performant even on constrained mobile networks.
+  </p>
+</section>
+
+
+<section id="manual">
+  <h2>4. User Manual</h2>
+
+  <h3>4.1 Getting Started</h3>
+  <ul>
+    <li>Navigate to <a href="https://www.figma.com/proto/UId2qssdQ5cz2iLk0BI9T9/ARBNB?node-id=8-208&p=f&t=lBEJIDPSScj9jsBq-1&scaling=scale-down&content-scaling=fixed&page-id=1%3A2&starting-point-node-id=8%3A208" target="_blank">Figma Prototype – ARBNB</a></li>
+    <li>Click <strong>Sign Up</strong> and enter your details to create an account.</li>
+    <li>Verify your account via email before logging in.</li>
+  </ul>
+
+  <h3>4.2 Browsing & Booking a Stay (Guests)</h3>
+  <p>You can browse and search for places without needing to create an account.</p>
+  <ol>
+    <li>Search by city or region and select check-in/check-out dates.</li>
+    <li>Apply filters for price, amenities, and property type.</li>
+    <li>Click a listing for full details.</li>
+    <li><strong>Note:</strong> To book a stay, you must be logged in. If you don’t have an account, you will be prompted to sign up or log in at checkout.</li>
+    <li>Input guest details and payment info, then confirm reservation.</li>
+    <li>Access your upcoming trips via the <strong>Trips</strong> tab once logged in.</li>
+  </ol>
+
+  <h3>4.3 Hosting a Property</h3>
+  <p>Hosting requires an account. You must be logged in to list a property for rent.</p>
+  <ol>
+    <li>Log in and navigate to <strong>Host Dashboard</strong>.</li>
+    <li>Click <strong>New Listing</strong> and complete the property form.</li>
+    <li>Upload high-quality photos and set pricing rules.</li>
+    <li>Submit for review; once approved, the property becomes public.</li>
+    <li>Track bookings, earnings, and messages via the dashboard.</li>
+  </ol>
+
+  <h3>4.4 Managing Your Account</h3>
+  <ul>
+    <li>Edit personal info and upload a profile picture under <strong>Settings</strong>.</li>
+    <li>Enable two-factor authentication for enhanced security.</li>
+    <li>Manage payout methods and notification preferences.</li>
+  </ul>
+</section>
+
+
+
+<section id="prototype_details">
+    <h2>5. Prototype Details</h2>
+
+    <p>
+    The current version of ARBNB is a fully interactive <strong>Figma prototype</strong> designed to simulate key user flows for both guests and hosts. This includes:
+    </p>
+
+    <ul>
+    <li>Onboarding and registration flow</li>
+    <li>Property search and filtering interactions</li>
+    <li>Listing details and booking interface</li>
+    <li>Host dashboard and listing creation</li>
+    </ul>
+
+    <p>
+    The prototype was designed using auto layout, variants, and component libraries to ensure consistency and responsiveness across screens. No backend functionality is implemented at this stage.
+    </p>
+
+    <p>
+    You can view or interact with the prototype at:  
+    <a href="https://www.figma.com/proto/UId2qssdQ5cz2iLk0BI9T9/ARBNB?node-id=8-208&p=f&t=lBEJIDPSScj9jsBq-1&scaling=scale-down&content-scaling=fixed&page-id=1%3A2&starting-point-node-id=8%3A208" target="_blank">Figma Prototype – ARBNB</a>
+    </p>
+</section>
+
+<section id="screen_overview">
+    <h2>6. Screen Overview</h2>
+
+    <p>
+        The ARBNB prototype consists of a series of interconnected screens that guide both guests and hosts through essential actions such as browsing, booking, and managing listings. Below is a summary of each screen and its role in the user flow:
+    </p>
+
+    <h3>6.1 Home Screen</h3>
+    <p>
+        The Home Screen is the primary landing page for users and features a central search bar for destination input. Directly below the search bar, a horizontally scrollable category menu allows users to quickly filter listings by popular property types or themes:
+    </p>
+
+    <ul>
+        <li><strong>Cabins</strong></li>
+        <li><strong>Lakefront</strong></li>
+        <li><strong>A-Frames</strong></li>
+        <li><strong>Tiny Homes</strong></li>
+        <li><strong>National Parks</strong></li>
+    </ul>
+
+    <p>
+        These categories enable users to explore curated listings suited to their travel preferences without needing to type specific queries.
+    </p>
+
+    <p>
+        Below the category menu, a section displays <strong>Recommended Locations</strong> tailored to the user's interests and popular trends. Users can browse and select these recommendations to quickly access curated listings and further details about the destination.
+    </p>
+
+    <p>
+        At the bottom of the screen, a persistent navigation bar offers quick access to the app’s main sections:
+    </p>
+
+    <ul>
+        <li><strong>Home:</strong> Returns to this landing page from anywhere in the app.</li>
+        <li><strong>My Trips:</strong> Displays the user's current and past bookings.</li>
+        <li><strong>Map:</strong> Opens an interactive map view of available listings.</li>
+        <li><strong>Profile:</strong> Allows users to manage account settings and personal preferences.</li>
+        <li><strong>VR:</strong> Provides virtual reality tours of selected properties.</li>
+    </ul>
+
+
+    <h3>6.2 Item Page (Listing Detail View)</h3>
+    <p>
+        The Item Page is accessed when a user selects a listing from the home screen, search results, or recommended locations. This screen provides a comprehensive overview of a specific property and serves as the main decision point before booking.
+    </p>
+
+    <p>
+        The top of the page typically displays a gallery of property images, followed by structured content organized into sections. Key information includes:
+    </p>
+
+    <ul>
+        <li><strong>Property Name</strong></li>
+        <li><strong>User rating</strong></li>
+        <li><strong>Host Information:</strong> Name, hosting history.</li>
+        <li><strong>Place Overview:</strong> Description of the property, number of guests, bedrooms, amenities, and house rules.</li>
+        <li><strong>Price:</strong> Nightly rate and total estimated cost based on selected dates (if applicable).</li>
+        <li><strong>Location:</strong> Address or general area with a map preview.</li>
+    </ul>
+
+    <p>
+        A secondary navigation bar is located beneath the main gallery, allowing users to easily switch between detailed sections:
+    </p>
+
+    <ul>
+        <li><strong>Reviews:</strong> User feedback, star ratings, and guest comments.</li>
+        <li><strong>Details:</strong> Full property description, amenities, check-in/out policies, and rules.</li>
+        <li><strong>Map:</strong> A larger interactive map showing the property's location.</li>
+        <li><strong>Tour:</strong> Option to view a virtual tour or immersive walkthrough of the listing (when available).</li>
+    </ul>
+
+    <p>
+        The design of this page emphasizes clarity and transparency to help users make informed decisions and feel confident in their booking.
+    </p>
+
+
+    <h3>6.3 Search Screen</h3>
+    <p>
+        The Search Screen allows users to browse available listings based on search input and filters.
+        This screen is typically accessed after a user initiates a search by entering a destination. 
+        It serves as the central hub for exploring available properties that match the user's criteria.
+    </p>
+
+    <p>
+        The top of the screen displays a persistent search bar with current query parameters (e.g., destination), allowing users to quickly refine or change their search.
+    </p>
+
+    <p>
+        The main body of the screen displays a vertically scrollable list of matching results. Each listing includes a preview card with:
+    </p>
+
+    <ul>
+        <li><strong>Listing Image:</strong> A representative thumbnail showcasing the property.</li>
+        <li><strong>Property Title:</strong> The name or headline assigned to the listing by the host.</li>
+        <li><strong>User Rating:</strong> Average rating based on guest reviews, typically displayed with stars and the number of reviews.</li>
+        <li><strong>Host Information:</strong> Includes the host’s name and hosting history (e.g., the length of time they have been active on the platform).</li>
+        <li><strong>Availability Period:</strong> The range of dates during which the property is available for booking.</li>
+    </ul>
+
+    <p>
+        The Search Screen focuses on discoverability, allowing users to narrow down a large set of options into listings that fit their preferences and constraints.
+    </p>
+
+
+    <h3>6.4 Map Screen</h3>
+    <p>
+        The Map Screen provides a geographic visualization of available listings, enabling users to explore accommodations in relation to their current location or a destination of interest. It enhances spatial decision-making and offers an intuitive, location-first browsing experience.
+    </p>
+
+    <p>
+        At the top of the screen, a persistent <strong>search bar</strong> allows users to manually input a desired location or address. Upon submitting a query, the map automatically recenters and refreshes the visible listings based on the new area.
+    </p>
+
+    <p>
+        At the bottom of the screen, a horizontally scrollable <strong>recommendation carousel</strong> showcases handpicked or trending listings. Each card displays a preview image, property name, and the distance from the user's current location. Tapping a card recenters the map and highlights the corresponding listing pin, allowing users to explore properties both visually and spatially.
+    </p>
+
+    <p>
+        The Map Screen is particularly helpful for users who prioritize proximity to specific areas—such as tourist landmarks, public transport hubs, or natural attractions—when selecting their accommodation.
+    </p>
+
+
+
+    <h3>6.5 Profile Screen</h3>
+    <p>
+        The Profile Screen serves as the central hub for user account management and application preferences. It allows users to access personal information, security settings, and support resources.
+    </p>
+
+    <p>
+        At the top of the screen, the user’s personal information is prominently displayed, including:
+    </p>
+    
+    <ul>
+        <li><strong>Profile Picture</strong></li>
+        <li><strong>Full Name</strong></li>
+        <li><strong>Username</strong></li>
+    </ul>
+
+    <p>
+        The central portion of the screen presents a series of actionable settings and account management options:
+    </p>
+
+    <ul>
+        <li><strong>My Account:</strong> View and edit personal information such as email, phone number, and password.</li>
+        <li><strong>Saved Beneficiary:</strong> Manage saved payment recipients or emergency contacts, if applicable.</li>
+        <li><strong>Face ID / Touch ID:</strong> Enable or disable biometric authentication for quicker and more secure access.</li>
+        <li><strong>Two-Factor Authentication:</strong> Configure additional security measures using SMS or authenticator apps.</li>
+        <li><strong>Log Out:</strong> Securely log out of the account.</li>
+    </ul>
+
+    <p>
+        Below the main account section, users can access general information and support features:
+    </p>
+
+    <ul>
+        <li><strong>Help and Support:</strong> Access FAQs, contact customer service, or troubleshoot issues.</li>
+        <li><strong>About App:</strong> View application version, developer information, and acknowledgments.</li>
+        <li><strong>Privacy Notice:</strong> Review the app’s data handling and user privacy policy.</li>
+        <li><strong>Terms of Service:</strong> Read the legal terms and conditions for using the ARBNB platform.</li>
+    </ul>
+
+    <p>
+        The Profile Screen is designed with clarity and accessibility in mind, ensuring that all account-related features and legal resources are easy to locate and navigate.
+    </p>
+
+    <h3>6.6 Virtual Reality (VR) Experience Screen</h3>
+    <p>
+        The VR Experience Screen provides an immersive, interactive 2D environment that allows users to explore a selected property in virtual reality. This feature simulates a real-world tour, enhancing user confidence and engagement when evaluating a potential accommodation.
+    </p>
+
+    <p>
+        A key element of the VR interface is the <strong>True-Scale Luggage Organizer</strong>, a virtual object that users can position within the space to compare dimensions and better understand room sizes. This functionality supports practical decision-making regarding space adequacy for travel needs.
+    </p>
+
+    <p>
+        Throughout the VR environment, users can interact with a series of smart icons that reveal contextual information or enable virtual controls. These include:
+    </p>
+
+    <ul>
+        <li>
+            <strong>Wi-Fi Network Status:</strong> Displays real-time connection details such as:
+            <ul>
+            <li>Network Name (SSID)</li>
+            <li>Signal Strength</li>
+            <li>Number of Connected Devices</li>
+            <li>Guest Network Availability</li>
+            </ul>
+        </li>
+
+        <li>
+            <strong>Coffee Machine:</strong> Provides step-by-step instructions for using the appliance, simulating real-life interaction for user familiarity before check-in.
+        </li>
+
+        <li>
+            <strong>Climate Control:</strong> Enables virtual adjustment of temperature settings, including increasing or decreasing the room’s temperature through intuitive VR controls.
+        </li>
+
+        <li>
+            <strong>Smart Lamp Control:</strong> Allows users to modify the brightness level of the room's smart lighting via a responsive slider interface or gesture-based interaction.
+        </li>
+
+        <li>
+            <strong>Hidden Safe:</strong> Introduces a secure element of the room tour, where users can simulate unlocking a digital safe using one of three options:
+            <ul>
+            <li>Facial Recognition</li>
+            <li>Fingerprint Scan</li>
+            <li>Manual Passcode Entry</li>
+            </ul>
+        </li>
+    </ul>
+
+    <p>
+        This screen enhances transparency, builds trust, and sets user expectations by offering a digital twin of the real accommodation. It also aligns with smart-home trends by integrating interactive, simulated devices within the virtual space.
+    </p>
+
+
+</section>
+
+
+
+  <footer>
+    <p>© 2025 ARBNB, Inc. All rights reserved. | Scholarly UI/UX Documentation</p>
+  </footer>
+</body>
+</html>
